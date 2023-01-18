@@ -1,0 +1,11 @@
+void deleteNode(LinkedListNode<int>*node){
+if(node->next == NULL){
+delete node;
+}else{
+swap(node->data, node->next->data);
+LinkedListNode<int> * curr = node->next;
+node->next = node->next->next;
+delete curr;
+}
+}
+
