@@ -1,0 +1,14 @@
+void postorder(TreeNode*root, vector<int> &answer){
+if(root == NULL){
+return;
+}
+postorder(root->left, answer);
+postorder(root->right, answer);
+answer.push_back(root->data);
+}
+
+vector<int> getPostorderTraversal(TreeNode*root){
+vector<int> answer;
+postorder(root, answer);
+return answer;
+}
